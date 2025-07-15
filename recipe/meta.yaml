@@ -1,4 +1,4 @@
-{% set version = '1.0.8' %}
+{% set version = "1.0.9" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,12 +9,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/phyloregion_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/phyloregion/phyloregion_{{ version }}.tar.gz
-  sha256: 6d7c19d246d918394b2e4299f57147f2a7f7adcf02deca4705d986b3dbd02582
+  sha256: 68523ae73841fee22d1423b157ca702f4b14b13228f41287c906a6de06149995
 
 build:
   # Checking windows to see if it passes. Uncomment the line if it fails.
-  skip: true              # [win]
-  number: 1
+  skip: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -65,14 +65,9 @@ test:
 about:
   home: https://github.com/darunabas/phyloregion, https://phyloregion.com/index.html
   license: AGPL-3.0-only
-  summary: Computational infrastructure for biogeography, community ecology, and biodiversity
-    conservation (Daru et al. 2020) <doi:10.1111/2041-210X.13478>. It is based on the
-    methods described in Daru et al. (2020) <doi:10.1038/s41467-020-15921-6>. The original
-    conceptual work is described in Daru et al. (2017) <doi:10.1016/j.tree.2017.08.013>
-    on patterns and processes of biogeographical regionalization. Additionally, the
-    package contains fast and efficient functions to compute more standard conservation
-    measures such as phylogenetic diversity, phylogenetic endemism, evolutionary distinctiveness
-    and global endangerment, as well as compositional turnover (e.g., beta diversity).
+  summary: Computational infrastructure for biogeography, community ecology, and biodiversity conservation (Daru et al. 2020) <doi:10.1111/2041-210X.13478>. It is based on the methods described in Daru et al. (2020) <doi:10.1038/s41467-020-15921-6>. The original conceptual work is described in Daru et al. (2017) <doi:10.1016/j.tree.2017.08.013>
+    on patterns and processes of biogeographical regionalization. Additionally, the package contains fast and efficient functions to compute more standard conservation measures such as phylogenetic diversity, phylogenetic endemism, evolutionary distinctiveness and global endangerment, as well as compositional turnover (e.g.,
+    beta diversity).
   license_family: AGPL
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/AGPL-3'
